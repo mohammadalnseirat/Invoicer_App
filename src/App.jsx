@@ -7,7 +7,7 @@ import ContactUs from "./pages/ContactUs";
 
 const App = () => {
   return (
-    <div>
+    <div className="bg-teal-200">
       <BrowserRouter>
         <Header />
         <Routes>

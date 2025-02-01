@@ -3,7 +3,6 @@ import LogOutModel from "../LogOutModel";
 
 const LogOut = () => {
   const [showModelLogOut, setShowModelLogOut] = useState(false);
-  console.log(showModelLogOut);
   return (
     <>
       <button

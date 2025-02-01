@@ -5,7 +5,7 @@ import LogIn from "../components/buttons/LogIn";
 const AboutPage = () => {
   return (
     <>
-      <section className="bg-teal-300 min-h-screen py-10 lg:py-20 ">
+      <section className="bg-teal-400 min-h-screen py-10 lg:py-20 ">
         <div className="max-w-6xl mx-auto flex flex-col items-center p-4">
           <h1 className="text-[40px] md:text-6xl font-mono font-bold text-slate-700 mb-5 lg:mb-8">
             About Invoicer{" "}
