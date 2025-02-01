@@ -17,6 +17,11 @@ body {
   @apply bg-teal-400 rounded-lg hover:bg-teal-500 transition-all duration-200;
 }
 
+.slant {
+  border-right: 100vw solid #33d1b1;
+  border-top: 150px solid transparent;
+}
+
 /* .slant-left {
   border-right: 100vw solid;
   @apply border-r-teal-200;

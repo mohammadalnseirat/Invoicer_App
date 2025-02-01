@@ -3,10 +3,10 @@ import { BsFillSendFill } from "react-icons/bs";
 const ContactUs = () => {
   return (
     <div className="min-h-screen mt-10 md:mt-20">
-      <div className="max-w-4xl mx-auto  py-10  p-4 flex flex-col md:flex-row items-center justify-center gap-10 ">
+      <div className="max-w-4xl mx-auto  py-10  px-6 flex flex-col md:flex-row items-center justify-center gap-10 ">
         {/* Left Side start here  */}
-        <div className="flex-1 order-2 md:order-1">
-          <div className="flex flex-col items-center gap-5 px-2 md:px-0">
+        <div className="flex-1 order-2 md:order-1 ">
+          <div className="flex flex-col items-center gap-4  md:px-0">
             <div className="w-96 h-96 relative">
               <img
                 src="/invoice.png"
@@ -14,9 +14,11 @@ const ContactUs = () => {
                 className=" object-cover w-full h-full animate-pulse"
               />
             </div>
-            <p className="text-center text-base md:text-md text-gray-600 px-2 md:px-4 py-2 border border-yellow-500 bg-slate-100 rounded-full">
-              Please enter your details and we will get back to you{" "}
-            </p>
+            <div className="px-5 md:px-0">
+              <p className="text-center text-sm md:text-md text-gray-600 px-4 py-2 border border-yellow-500 bg-slate-100 rounded-full">
+                Please enter your details and we will get back to you{" "}
+              </p>
+            </div>
           </div>
         </div>
         {/* left side end here */}
