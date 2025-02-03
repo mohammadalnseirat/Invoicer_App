@@ -7,7 +7,7 @@ const AboutPage = () => {
     <>
       <section className="bg-teal-400 min-h-screen py-10 lg:py-20 ">
         <div className="max-w-6xl mx-auto flex flex-col items-center p-4">
-          <h1 className="text-[40px] md:text-6xl font-mono font-bold text-slate-700 mb-5 lg:mb-8">
+          <h1 className="text-3xl md:text-6xl font-mono font-bold text-slate-700 mb-5 lg:mb-8">
             About Invoicer{" "}
           </h1>
           <p className="w-full md:w-2/3 flex  gap-2 text-xl md:mx-auto ">

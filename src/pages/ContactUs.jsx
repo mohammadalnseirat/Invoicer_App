@@ -1,84 +1,129 @@
+import {
+  TbCircleDashedNumber1,
+  TbCircleDashedNumber2,
+  TbCircleDashedNumber3,
+} from "react-icons/tb";
 import { BsFillSendFill } from "react-icons/bs";
+import { motion, AnimatePresence } from "framer-motion";
+
+const containerVariants = {
+  hidden: { opacity: 0, y: 50 },
+  visible: {
+    opacity: 1,
+    y: 0,
+    transition: {
+      duration: 0.6,
+      ease: "easeInOut",
+      staggerChildren: 0.2, // Stagger animations inside
+    },
+  },
+  exit: { opacity: 0, y: -50, transition: { duration: 0.4 } },
+};
+
+const childVariants = {
+  hidden: { opacity: 0, y: 30 },
+  visible: { opacity: 1, y: 0, transition: { duration: 0.5 } },
+};
 
 const ContactUs = () => {
   return (
-    <div className="min-h-screen mt-10 md:mt-20">
-      <div className="max-w-4xl mx-auto  py-10  px-6 flex flex-col md:flex-row items-center justify-center gap-10 ">
-        {/* Left Side start here  */}
-        <div className="flex-1 order-2 md:order-1 ">
-          <div className="flex flex-col items-center gap-4  md:px-0">
-            <div className="w-96 h-96 relative">
+    <div className="min-h-screen mt-10 ">
+      <AnimatePresence mode="wait">
+        <motion.div
+          variants={containerVariants}
+          initial="hidden"
+          animate="visible"
+          exit="exit"
+          className=" md:max-w-6xl mx-auto  flex flex-col md:flex-row p-6 gap-8 md:gap-10 justify-center  border-gray-400 "
+        >
+          {/* Left Side Start here */}
+          <motion.div variants={childVariants} className="flex-1">
+            <div className="flex flex-col border border-teal-400 shadow rounded p-6 gap-2 items-center  text-center md:text-left">
               <img
-                src="/invoice.png"
-                alt="contact-logo"
-                className=" object-cover w-full h-full animate-pulse"
+                src="/contactus.png"
+                alt="contact-us"
+                className="object-cover w-full "
               />
-            </div>
-            <div className="px-5 md:px-0">
-              <p className="text-center text-sm md:text-md text-gray-600 px-4 py-2 border border-yellow-500 bg-slate-100 rounded-full">
-                Please enter your details and we will get back to you{" "}
+
+              <h2 className="text-3xl md:text-4xl text-slate-700 font-bold">
+                Get In Touch
+              </h2>
+              <p className=" text-slate-900">
+                {" "}
+                We&apos;d love to hear from you. Fill out the form and our team
+                will get back to you as soon as possible.
               </p>
             </div>
-          </div>
-        </div>
-        {/* left side end here */}
-        {/* Right side start here */}
-        <div className="flex-1 order-1 md:order-2">
-          <div className="bg-white p-6 rounded-lg shadow border border-teal-400">
-            <form className="flex flex-col gap-4 md:gap-6">
-              <div className="flex flex-col gap-1">
-                <label
-                  htmlFor="username"
-                  className="cursor-pointer text-md text-slate-700"
+          </motion.div>
+          {/* Left Side End Here */}
+          {/* Right Side Start here */}
+
+          <motion.div variants={childVariants} className="flex-1">
+            <div className="flex flex-col py-8  gap-4 p-4 bg-white border border-gray-300 rounded-lg shadow">
+              <h2 className="text-3xl md:text-4xl text-slate-700 font-bold font-mono text-center">
+                Contact Us
+              </h2>
+              <form className="space-y-4">
+                <div className="flex flex-col gap-1">
+                  <label
+                    htmlFor="username"
+                    className="flex items-center gap-1 cursor-pointer text-gray-600"
+                  >
+                    <TbCircleDashedNumber1 className="text-red-600 w-5 h-5" />
+                    User Name:
+                  </label>
+                  <input
+                    type="text"
+                    id="username"
+                    placeholder="Enter your name..."
+                    className="border border-gray-400 rounded-md p-2 focus:outline-none focus:border-teal-500 transition-all duration-200"
+                  />
+                </div>
+                <div className="flex flex-col gap-1">
+                  <label
+                    htmlFor="email"
+                    className="flex items-center gap-1 cursor-pointer text-gray-600"
+                  >
+                    <TbCircleDashedNumber2 className="text-red-600 w-5 h-5" />
+                    Email:
+                  </label>
+                  <input
+                    type="email"
+                    id="email"
+                    placeholder="Enter your email..."
+                    className="border border-gray-400 rounded-md p-2 focus:outline-none focus:border-teal-500 transition-all duration-200"
+                  />
+                </div>
+                <div>
+                  <label
+                    htmlFor="message"
+                    className="flex items-center gap-1 cursor-pointer text-gray-600"
+                  >
+                    <TbCircleDashedNumber3 className="text-red-600 w-5 h-5" />
+                    Message:
+                  </label>
+                  <textarea
+                    id="message"
+                    rows="5"
+                    maxLength={500}
+                    placeholder="Enter your message..."
+                    className="border w-full resize-none border-gray-400 rounded-md p-2 focus:outline-none focus:border-teal-500 transition-all duration-200"
+                  />
+                </div>
+                <button
+                  type="submit"
+                  className="bg-teal-600 flex items-center justify-center px-4 py-2 rounded text-white w-full hover:bg-teal-700 hover:ring-4 hover:ring-teal-500 transition-all duration-300 cursor-pointer"
                 >
-                  Your Name:
-                </label>
-                <input
-                  type="text"
-                  id="username"
-                  placeholder="Enter your name"
-                  className="px-4 py-2 border bg-white border-gray-600 rounded focus:border-teal-400  focus:outline-none"
-                />
-              </div>
-              <div className="flex flex-col gap-1 ">
-                <label
-                  htmlFor="email"
-                  className="cursor-pointer text-md text-slate-700"
-                >
-                  Email:
-                </label>
-                <input
-                  type="email"
-                  id="email"
-                  placeholder="Enter your email"
-                  className="px-4 py-2 border border-gray-600 rounded focus:border-teal-400  focus:outline-none"
-                />
-              </div>
-              <div className="flex flex-col gap-1">
-                <label
-                  htmlFor="message"
-                  className="cursor-pointer text-md text-slate-700"
-                >
-                  Message:
-                </label>
-                <textarea
-                  name="message"
-                  id="message"
-                  cols="30"
-                  rows="10"
-                  maxLength={"500"}
-                  placeholder="Enter your message"
-                  className="px-4 py-2 border resize-none border-gray-600 rounded focus:border-teal-400  focus:outline-none"
-                ></textarea>
-              </div>
-              <button className="bg-teal-500 flex items-center justify-center gap-2 py-2 px-6 font-[400] shadow cursor-pointer text-base rounded-lg text-white hover:bg-teal-600 hover:ring-4 hover:ring-teal-500 transition-all duration-300 ">
-                Send Message <BsFillSendFill className="mt-0.5" />
-              </button>
-            </form>
-          </div>
-        </div>
-        {/* Right side end here */}
-      </div>
+                  Send Message
+                  <BsFillSendFill className="ml-2 mt-1" />
+                </button>
+              </form>
+            </div>
+          </motion.div>
+
+          {/* Right Side End Here */}
+        </motion.div>
+      </AnimatePresence>
     </div>
   );
 };
